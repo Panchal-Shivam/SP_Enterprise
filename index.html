@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP Enterprise | Pharma & Food Processing Machinery</title>
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FEFEFE; /* White Background */
+            color: #444D98; /* Primary Text Color */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #444D98; /* Main Theme Color */
+            padding: 10px 20px;
+        }
+
+        /* Company Name */
+        .navbar-brand {
+            color: #FEFEFE; /* White Text */
+            font-size: 22px;
+            text-decoration: none;
+        }
+
+        /* Desktop Menu */
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: #FEFEFE; /* White Links */
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        /* Underline Effect */
+        .nav-links a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 3px;
+            background-color: #D96528; /* Orange Underline */
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Button */
+        .menu-btn {
+            font-size: 24px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: #FEFEFE; /* White */
+            display: none;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #444D98; /* Same as Navbar */
+            overflow-x: hidden;
+            transition: width 0.3s ease-in-out;
+            padding-top: 60px;
+            text-align: center; /* Center Align Menu */
+        }
+
+        .sidebar a {
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #FEFEFE; /* White */
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #D96528; /* Orange Hover */
+        }
+
+        /* Sidebar Close Button */
+        .sidebar .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block; /* Show Hamburger in Mobile */
+            }
+            .nav-links {
+                display: none; /* Hide Desktop Menu */
+            }
+        }
+    </style>
+</head>
+<body onclick="closeNav(event)">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">SP Enterprise</a>
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#intro">About</a>
+            <a href="#clients">Clients</a>
+            <a href="#products">Products</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="menu-btn" onclick="toggleNav(event)">&#9776;</button>
+    </nav>
+    
+    <!-- Sidebar Navigation (Expands to 65%) -->
+    <div id="mySidebar" class="sidebar" onclick="event.stopPropagation()">
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleNav(event)">&times;</a>
+       <div class="menu-item-list">
+        <a href="#hero">Home</a>
+        <a href="#intro">About</a>
+        <a href="#clients">Clients</a>
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </div>
+    </div>
+
+    <script>
+        function toggleNav(event) {
+            event.stopPropagation();
+            let sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.width === "65%") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "65%"; /* Expands Sidebar to 65% */
+            }
+        }
+
+        function closeNav(event) {
+            let sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.width === "65%") {
+                sidebar.style.width = "0";
+            }
+        }
+    </script>
+</body>
+</html>
