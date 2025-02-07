@@ -121,6 +121,39 @@
             .nav-links {
                 display: none; /* Hide Desktop Menu */
             }
+            .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center all sidebar content */
+        padding-top: 0; /* Remove unnecessary top padding */
+    }
+
+    .menu-item-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Space between menu items */
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar a {
+        display: inline-block; /* Shrinks the clickable area to text */
+        padding: 5px 10px; /* Minimal padding for better touch experience */
+        font-size: 20px; /* Slightly larger text */
+        text-align: center;
+    }
+
+    .sidebar a:hover {
+        background-color: #D96528; /* Orange hover */
+        border-radius: 22px; /* Slight rounding for a better effect */
+    }
+
+    .sidebar .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
         }
     </style>
 </head>
