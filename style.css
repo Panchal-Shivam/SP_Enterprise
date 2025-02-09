@@ -1,0 +1,141 @@
+ /* Global Styles */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FEFEFE; /* White Background */
+    color: #444D98; /* Primary Text Color */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #444D98; /* Main Theme Color */
+    padding: 10px 20px;
+}
+
+/* Company Name */
+.navbar-brand {
+    color: #FEFEFE; /* White Text */
+    font-size: 22px;
+    text-decoration: none;
+}
+
+/* Desktop Menu */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #FEFEFE; /* White Links */
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Underline Effect */
+.nav-links a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #D96528; /* Orange Underline */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Button */
+.menu-btn {
+    font-size: 24px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #FEFEFE; /* White */
+    display: none;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #444D98; /* Same as Navbar */
+    overflow-x: hidden;
+    transition: width 0.3s ease-in-out;
+    padding-top: 60px;
+    text-align: center; /* Center Align Menu */
+}
+
+.sidebar a {
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #FEFEFE; /* White */
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #D96528; /* Orange Hover */
+}
+
+/* Sidebar Close Button */
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block; /* Show Hamburger in Mobile */
+    }
+    .nav-links {
+        display: none; /* Hide Desktop Menu */
+    }
+    .sidebar {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center; /* Center all sidebar content */
+padding-top: 0; /* Remove unnecessary top padding */
+}
+
+.menu-item-list {
+display: flex;
+flex-direction: column;
+gap: 15px; /* Space between menu items */
+width: 100%;
+text-align: center;
+}
+
+.sidebar a {
+display: inline-block; /* Shrinks the clickable area to text */
+padding: 5px 10px; /* Minimal padding for better touch experience */
+font-size: 20px; /* Slightly larger text */
+text-align: center;
+}
+
+.sidebar a:hover {
+background-color: #D96528; /* Orange hover */
+border-radius: 22px; /* Slight rounding for a better effect */
+}
+
+.sidebar .close-btn {
+position: absolute;
+top: 15px;
+right: 25px;
+}
+}
