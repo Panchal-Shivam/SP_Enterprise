@@ -1,5 +1,5 @@
- /* Global Styles */
- body {
+/* Global Styles */
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -70,9 +70,10 @@
     left: 0;
     background-color: #444D98; /* Same as Navbar */
     overflow-x: hidden;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.2s ease-in-out;
     padding-top: 60px;
     text-align: center; /* Center Align Menu */
+    z-index: 1000; /* Sidebar stays above hero section */
 }
 
 .sidebar a {
@@ -106,36 +107,118 @@
         display: none; /* Hide Desktop Menu */
     }
     .sidebar {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center; /* Center all sidebar content */
-padding-top: 0; /* Remove unnecessary top padding */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center all sidebar content */
+        padding-top: 0; /* Remove unnecessary top padding */
+    }
+
+    .menu-item-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Space between menu items */
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar a {
+        display: inline-block; /* Shrinks the clickable area to text */
+        padding: 5px 10px; /* Minimal padding for better touch experience */
+        font-size: 20px; /* Slightly larger text */
+        text-align: center;
+    }
+
+    .sidebar a:hover {
+        background-color: #D96528; /* Orange hover */
+        border-radius: 22px; /* Slight rounding for a better effect */
+    }
+
+    .sidebar .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
 }
 
-.menu-item-list {
-display: flex;
-flex-direction: column;
-gap: 15px; /* Space between menu items */
-width: 100%;
-text-align: center;
+/* Hero Section */
+#hero-section {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    position: relative;
 }
 
-.sidebar a {
-display: inline-block; /* Shrinks the clickable area to text */
-padding: 5px 10px; /* Minimal padding for better touch experience */
-font-size: 20px; /* Slightly larger text */
-text-align: center;
+/* Ensure only the carousel gets the overlay, not other elements */
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
-.sidebar a:hover {
-background-color: #D96528; /* Orange hover */
-border-radius: 22px; /* Slight rounding for a better effect */
+.carousel-item {
+    position: relative;
 }
 
-.sidebar .close-btn {
-position: absolute;
-top: 15px;
-right: 25px;
+
+
+/* Overlay inside carousel only */
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    z-index: 1;
 }
+
+.carousel-item img {
+    width: 100%;
+    height: 85vh; /* Full viewport height */
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
 }
+
+/* Position text and CTA on top of carousel */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 80%;
+}
+
+.hero-content h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* CTA Icons */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cta-icon {
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    border-radius: 80%;
+    transition: background 0.3s ease;
+}
+
+.cta-icon:hover {
+    background: #D96528; /* Orange hover effect */
+}
+
+
