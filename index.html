@@ -6,16 +6,20 @@
     <title>SP Enterprise | Pharma & Food Processing Machinery</title>
     
     <!-- External Stylesheets -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     
     <!-- External Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
-    
+
+     <!-- Linking Font Awesome for icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+     
    
 </head>
-<body onclick="closeNav(event)">
+<body>
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -34,15 +38,57 @@
     <!-- Sidebar Navigation (Expands to 65%) -->
     <div id="mySidebar" class="sidebar" onclick="event.stopPropagation()">
         <a href="javascript:void(0)" class="close-btn" onclick="toggleNav(event)">&times;</a>
-       <div class="menu-item-list">
-        <a href="#hero">Home</a>
-        <a href="#intro">About</a>
-        <a href="#clients">Clients</a>
-        <a href="#products">Products</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </div>
+        <div class="menu-item-list">
+            <a href="#hero">Home</a>
+            <a href="#intro">About</a>
+            <a href="#clients">Clients</a>
+            <a href="#products">Products</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
     </div>
 
+    <section id="hero-section">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/a.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/b.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/c.webp" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Text and CTA Buttons -->
+        <div class="hero-content">
+            <h1>Manufacturer of Pharmaceutical Equipment & Machinery</h1>
+            <div class="cta-buttons">
+                <a href="tel:+yourphonenumber" class="cta-icon">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:your-email@example.com" class="cta-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/yourwhatsappnumber" class="cta-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="about">
+        <div class="container text-center my-5">
+            <h2>Who We Are</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec auctor, felis ac convallis cursus, orci libero aliquet turpis, eget sollicitudin nulla libero at eros.</p>
+            <p><strong>Proprietor:</strong> Sachin J Panchal</p>
+        </div>
+    </section>
+    
+    
 </body>
 </html>
