@@ -233,7 +233,7 @@ body {
 .logos-slide {
     display: flex;
     gap: 30px;
-    animation: scroll 15s linear infinite;
+    animation: scroll 10s linear infinite;
 }
 
 .logos-slide img {
